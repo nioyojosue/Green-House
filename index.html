@@ -109,6 +109,7 @@
                                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                             </div>
                             <div class="ml-auto">
+                                <button id="lang-toggle" class="btn btn-language" style="background-color: #27ae60; color: white; margin-right: 10px;">EN</button>
                                 <a class="btn" href="#">Get A Quote</a>
                             </div>
                         </div>
@@ -888,5 +889,98 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Translation Script -->
+        <script>
+            let currentLang = localStorage.getItem('preferredLang') || 'en';
+
+            const translations = {
+                'Opening Hour': 'Heures d\'ouverture',
+                'Mon - Fri, 8:00 - 9:00': 'Lun - Ven, 8:00 - 9:00',
+                'Call Us': 'Appelez-nous',
+                'Email Us': 'Écrivez-nous',
+                'Home': 'Accueil',
+                'About': 'À propos',
+                'Service': 'Service',
+                'Team': 'Équipe',
+                'Project': 'Projet',
+                'Pages': 'Pages',
+                'Blog Page': 'Page Blog',
+                'Single Page': 'Page Unique',
+                'Contact': 'Contact',
+                'Get A Quote': 'Demander un devis',
+                'We Are Professional': 'Nous sommes professionnels',
+                'For Your Dream Project': 'Pour votre projet de rêve',
+                'Professional Builder': 'Constructeur professionnel',
+                'We Build Your Home': 'Nous construisons votre maison',
+                'We Are Trusted': 'Nous sommes de confiance',
+                'Pour vos achats de Terrain': 'Pour vos achats de Terrain',
+                'Expert Worker': 'Travailleur expert',
+                'Quality Work': 'Travail de qualité',
+                '24/7 Support': 'Support 24h/24, 7j/7',
+                'Welcome to Builderz': 'Bienvenue chez Builderz',
+                '25 Years Experience': '25 ans d\'expérience',
+                'Learn More': 'En savoir plus',
+                'Expert Workers': 'Travailleurs experts',
+                'Happy Clients': 'Clients satisfaits',
+                'Completed Projects': 'Projets terminés',
+                'Running Projects': 'Projets en cours',
+                'Our Services': 'Nos services',
+                'We Provide Services': 'Nous fournissons des services',
+                'Building Construction': 'Construction de bâtiments',
+                'House Renovation': 'Rénovation de maison',
+                'Architecture Design': 'Conception architecturale',
+                'Interior Design': 'Design d\'intérieur',
+                'Fixing & Support': 'Réparation et support',
+                'Painting': 'Peinture',
+                'Our Team': 'Notre équipe',
+                'Meet Our Engineer': 'Rencontrez nos ingénieurs',
+                'CEO & Founder': 'PDG & Fondateur',
+                'Civil Engineer': 'Ingénieur civil',
+                'Interior Designer': 'Designer d\'intérieur',
+                'Painter': 'Peintre',
+                'Frequently Asked Question': 'Questions fréquemment posées',
+                'You May Ask': 'Vous pouvez demander',
+                'Latest Blog': 'Dernier blog',
+                'Latest From Our Blog': 'Dernières nouvelles de notre blog',
+                'Office Contact': 'Contact du bureau',
+                'Services Areas': 'Zones de service',
+                'Useful Pages': 'Pages utiles',
+                'Newsletter': 'Infolettre'
+            };
+
+            function translateElement(node) {
+                if (node.nodeType === 3) {
+                    let text = node.textContent;
+                    for (let [en, fr] of Object.entries(translations)) {
+                        if (currentLang === 'fr') {
+                            text = text.replace(new RegExp('\\b' + en + '\\b', 'g'), fr);
+                        } else {
+                            text = text.replace(new RegExp('\\b' + fr + '\\b', 'g'), en);
+                        }
+                    }
+                    node.textContent = text;
+                } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+                    for (let child of node.childNodes) {
+                        translateElement(child);
+                    }
+                }
+            }
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'en' ? 'fr' : 'en';
+                localStorage.setItem('preferredLang', currentLang);
+                document.getElementById('lang-toggle').innerText = currentLang === 'en' ? 'EN' : 'FR';
+                translateElement(document.body);
+            }
+
+            document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+            document.getElementById('lang-toggle').innerText = currentLang === 'en' ? 'EN' : 'FR';
+
+            // Apply saved language on load
+            if (currentLang === 'fr') {
+                translateElement(document.body);
+            }
+        </script>
     </body>
 </html>
