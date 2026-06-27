@@ -2,8 +2,8 @@
 /********* General CSS *********/
 /*******************************/
 body {
-    color: #666666;
-    background: #dddddd;
+    color: #878787;
+    background: #878787;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
@@ -20,14 +20,14 @@ h6 {
 }
 
 a {
-    color: #666666;
+    color: #878787;
     transition: .3s;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #27ae60;
+    color: #3AAA35;
     outline: none;
     text-decoration: none;
 }
@@ -47,7 +47,7 @@ a:focus {
 .back-to-top {
     position: fixed;
     display: none;
-    background: #27ae60;
+    background: #3AAA35;
     color: #121518;
     width: 44px;
     height: 44px;
@@ -61,7 +61,7 @@ a:focus {
 }
 
 .back-to-top:hover {
-    color: #27ae60;
+    color: #3AAA35;
     background: #121518;
 }
 
@@ -80,7 +80,7 @@ a:focus {
 .top-bar {
     position: relative;
     height: 90px;
-    background: #27ae60;
+    background: #3AAA35;
 }
 
 .top-bar .logo {
@@ -157,7 +157,7 @@ a:focus {
 /**********************************/
 .nav-bar {
     position: relative;
-    background: #27ae60;
+    background: #3AAA35;
     transition: .3s;
 }
 
@@ -189,7 +189,7 @@ a:focus {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #27ae60;
+    color: #3AAA35;
     transition: none;
 }
 
@@ -208,8 +208,8 @@ a:focus {
 
 .nav-bar .btn:hover {
     color: #030f27;
-    background: #27ae60;
-    border-color: #27ae60;
+    background: #3AAA35;
+    border-color: #3AAA35;
 }
 
 @media (min-width: 992px) {
@@ -387,7 +387,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 90px 0;
     text-align: center;
-    background: #27ae60;
+    background: #3AAA35;
 }
 
 .page-header h2 {
@@ -474,7 +474,7 @@ a:focus {
 }
 
 .section-header p {
-    color: #27ae60;
+    color: #3AAA35;
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -552,13 +552,13 @@ a:focus {
 }
 
 .feature .col-md-12:nth-child(2n) .feature-icon::after {
-    background: #27ae60;
+    background: #3AAA35;
 }
 
 .feature .feature-icon [class^="flaticon-"]::before {
     position: relative;
     margin: 0;
-    color: #27ae60;
+    color: #3AAA35;
     font-size: 60px;
     line-height: 60px;
     z-index: 3;
@@ -570,14 +570,14 @@ a:focus {
 
 .feature .feature-text h3 {
     margin: 0 0 10px 0;
-    color: #27ae60;
+    color: #3AAA35;
     font-size: 25px;
     font-weight: 600;
 }
 
 .feature .feature-text p {
     margin: 0;
-    color: #27ae60;
+    color: #3AAA35;
     font-size: 18px;
     font-weight: 400;
 }
@@ -626,12 +626,12 @@ a:focus {
     letter-spacing: 1px;
     color: #030f27;
     border-radius: 0;
-    background: #27ae60;
+    background: #3AAA35;
     transition: .3s;
 }
 
 .about .about-text a.btn:hover {
-    color: #27ae60;
+    color: #3AAA35;
     background: #030f27;
 }
 
@@ -698,17 +698,17 @@ a:focus {
 }
 
 .fact .fact-left {
-    color: #27ae60;
+    color: #3AAA35;
     background: #030f27;
 }
 
 .fact .fact-right {
     color: #030f27;
-    background: #27ae60;
+    background: #3AAA35;
 }
 
 .fact .fact-left h2 {
-    color: #27ae60;
+    color: #3AAA35;
 }
 
 
@@ -758,7 +758,7 @@ a:focus {
 
 .service .service-overlay p {
     margin: 0;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .service .service-text {
@@ -777,7 +777,7 @@ a:focus {
     width: calc(100% - 60px);
     font-size: 20px;
     font-weight: 700;
-    color: #27ae60;
+    color: #3AAA35;
     text-align: left;
     overflow: hidden;
     white-space: nowrap;
@@ -795,7 +795,7 @@ a:focus {
     line-height: 60px;
     font-weight: 100;
     color: #030f27;
-    background: #27ae60;
+    background: #3AAA35;
     border-radius: 0;
     transition: .3s;
 }
@@ -846,7 +846,7 @@ a:focus {
     display: block;
     width: 100px;
     height: 100px;
-    background: #27ae60;
+    background: #3AAA35;
     border-radius: 50%;
     animation: pulse-border 1500ms ease-out infinite;
 }
