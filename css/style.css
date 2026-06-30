@@ -176,6 +176,17 @@ a:focus {
     }
 }
 
+@media (max-width: 767.98px) {
+    .top-bar .logo .site-logo {
+        max-height: 50px;
+    }
+
+    .top-bar .logo h1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
+
 @media (max-width: 575.98px) {
     .top-bar {
         height: auto;
@@ -187,12 +198,12 @@ a:focus {
     }
 
     .top-bar .logo .site-logo {
-        max-height: 38px;
+        max-height: 44px;
     }
 
     .top-bar .logo h1 {
-        font-size: 22px;
-        line-height: 32px;
+        font-size: 24px;
+        line-height: 36px;
         letter-spacing: 0;
         margin: 0;
     }
@@ -201,6 +212,7 @@ a:focus {
         justify-content: center;
     }
 }
+
 
 
 
