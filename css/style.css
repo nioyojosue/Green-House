@@ -1189,9 +1189,24 @@ a:focus {
 .faqs .card-body {
     padding: 20px 25px;
     font-size: 16px;
-    background: #ffffff;
+    background: #555556;
     border: 1px solid rgba(0, 0, 0, .1);
     border-top: none;
+}
+
+.faqs .btn-faq-more {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #3AAA35;
+    color: #555556;
+    border: none;
+    border-radius: 0;
+}
+
+.faqs .btn-faq-more:hover {
+    color: #3AAA35;
+    background: #555556;
 }
 
 
