@@ -1,6 +1,10 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: #878787;
     background: #030f27;
@@ -30,6 +34,12 @@ a:focus {
     color: #3AAA35;
     outline: none;
     text-decoration: none;
+}
+
+[id^="transaction-"],
+[id^="installation-"],
+[id^="gestion-projet"] {
+    scroll-margin-top: 110px;
 }
 
 .btn:focus {
@@ -263,6 +273,18 @@ a:focus {
     border-radius: 0;
     background: #f8f9fa;
 }
+
+/* Dropdown Service items hover */
+.nav-bar .dropdown-menu .dropdown-item {
+    color: #000000;
+}
+
+.nav-bar .dropdown-menu .dropdown-item:hover,
+.nav-bar .dropdown-menu .dropdown-item:focus {
+    color: #000000;
+    background: #3AAA35;
+}
+
 
 .nav-bar .btn {
     color: #ffffff;
@@ -802,50 +824,36 @@ a:focus {
 }
 
 .service .service-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(3, 15, 39, .7);
-    transition: .5s;
-    opacity: 0;
+    display: none;
 }
 
-.service .service-item:hover .service-overlay {
-    opacity: 1;
-}
-
-.service .service-overlay p {
-    margin: 0;
-    color: #FFFFFF;
+.service .service-img {
+    position: relative;
 }
 
 .service .service-text {
     display: flex;
-    align-items: center;
-    height: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 120px;
     background: #555556;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    padding: 15px 15px 15px 25px;
 }
 
+
 .service .service-text h3 {
-    margin: 0;
-    padding: 0 15px 0 25px;
-    width: calc(100% - 60px);
-    font-size: 20px;
+    margin: 0 0 8px 0;
+    font-size: 18px;
     font-weight: 700;
     color: #3AAA35;
-    text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+}
+
+.service .service-text p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.5;
 }
 
 .service .service-item a.btn {
@@ -867,6 +875,7 @@ a:focus {
 .service .service-item:hover a.btn {
     color: #ffffff;
 }
+
 
 
 /*******************************/
