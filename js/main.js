@@ -1,8 +1,12 @@
 (function ($) {
     "use strict";
     
-    // Initiate the wowjs
-    new WOW().init();
+    // Initiate the wowjs only if there are WOW elements
+    if (document.querySelector('[class*="wow"]')) {
+        new WOW().init();
+    }
+
+
     
     
     // Back to top button
@@ -49,11 +53,13 @@
     });
     
     
-    // jQuery counterUp
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
+    // jQuery counterUp (only if present)
+    if (document.querySelector('[data-toggle="counter-up"]')) {
+        $('[data-toggle="counter-up"]').counterUp({
+            delay: 10,
+            time: 2000
+        });
+    }
     
     
     // Modal Video
@@ -74,64 +80,79 @@
     });
 
 
-    // Testimonial Slider
-    $('.testimonial-slider').slick({
-        infinite: true,
-        autoplay: true,
-        arrows: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.testimonial-slider-nav'
-    });
-    $('.testimonial-slider-nav').slick({
-        arrows: false,
-        dots: false,
-        focusOnSelect: true,
-        centerMode: true,
-        centerPadding: '22px',
-        slidesToShow: 3,
-        asNavFor: '.testimonial-slider'
-    });
-    $('.testimonial .slider-nav').css({"position": "relative", "height": "160px"});
-    
-    
-    // Blogs carousel
-    $(".related-slider").owlCarousel({
-        autoplay: true,
-        dots: false,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            }
+
+
+    // Testimonial Slider (only if present)
+    if (document.querySelector('.testimonial-slider')) {
+        $('.testimonial-slider').slick({
+            infinite: true,
+            autoplay: true,
+            arrows: false,
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.testimonial-slider-nav'
+        });
+
+        if (document.querySelector('.testimonial-slider-nav')) {
+            $('.testimonial-slider-nav').slick({
+                arrows: false,
+                dots: false,
+                focusOnSelect: true,
+                centerMode: true,
+                centerPadding: '22px',
+                slidesToShow: 3,
+                asNavFor: '.testimonial-slider'
+            });
         }
-    });
-    
-    
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
 
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('filter-active');
-        $(this).addClass('filter-active');
+        $('.testimonial .slider-nav').css({"position": "relative", "height": "160px"});
+    }
+    
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
+    // Blogs carousel (only if present)
+    if (document.querySelector('.related-slider')) {
+        $(".related-slider").owlCarousel({
+            autoplay: true,
+            dots: false,
+            loop: true,
+            nav : true,
+            navText : [
+                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+            ],
+            responsive: {
+                0:{
+                    items:1
+                },
+                576:{
+                    items:1
+                },
+                768:{
+                    items:2
+                }
+            }
+        });
+    }
+    
+
+    // Portfolio isotope and filter (only if present)
+    var $portfolioContainer = $('.portfolio-container');
+    if ($portfolioContainer.length) {
+        var portfolioIsotope = $portfolioContainer.isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
+
+        if (document.querySelector('#portfolio-flters li')) {
+            $('#portfolio-flters li').on('click', function () {
+                $("#portfolio-flters li").removeClass('filter-active');
+                $(this).addClass('filter-active');
+
+                portfolioIsotope.isotope({filter: $(this).data('filter')});
+            });
+        }
+    }
     
 })(jQuery);
 

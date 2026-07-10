@@ -404,6 +404,14 @@ a:focus {
     margin-bottom: 35px;
 }
 
+/* Index hover: garder le texte blanc dans le carousel */
+.carousel .carousel-caption p,
+.carousel .carousel-caption h2,
+.carousel .carousel-caption h1 {
+    color: #ffffff;
+}
+
+
 .carousel .carousel-caption .btn {
     padding: 15px 35px;
     font-size: 18px;
